@@ -17,19 +17,19 @@ for _ in range(t):
             n=[n[i]*n[i+1] for i in range(0,2*(int(len(n)/2)),2)]
             pi=0
             ni=0
-            while(k):
+            while(k>0):
                 if(k%2==1 and len(p)-pi<=2):
                     prod*=p[pi]
                     prod%=M
                     k-=1
-                    while(k):
+                    while(k>0):
                         prod*=n[ni]
                         prod%=M
                         ni+=1
                         k-=2
                     break
                 if(len(p)==pi or(k%2==0 and len(p)==pi+1)):
-                    while(k):
+                    while(k>0):
                         prod*=n[ni]
                         prod%=M
                         ni+=1
@@ -46,7 +46,7 @@ for _ in range(t):
                         pi+=2
                     k-=2
                 else:
-                    while(k):
+                    while(k>0):
                         prod*=p[pi]
                         prod%=M
                         pi+=1
